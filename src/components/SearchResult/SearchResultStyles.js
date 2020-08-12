@@ -19,7 +19,27 @@ export const SearchTitle = styled.h3`
     width:200px;
     color: white;
     `
-export const SearchList = styled.ul``
-export const SearchListItem = styled.li``
+export const SearchList = styled.ul`
+    list-style:none;
+    padding:0;    
+`
+export const SearchListItem = styled.li`
+     margin:10px;
+     display:flex;
+     justify-content:space-between;
+`
+export const NumberResult = styled.span`
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.8em;
+    font-weight: 300;
+    padding: 0px 10px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 8px;
+    color:#000;
+
+
+
+`
 
 

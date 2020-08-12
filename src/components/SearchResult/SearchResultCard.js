@@ -1,5 +1,5 @@
 import React from 'react';
-import { SearchCard, SearchList,SearchListItem, SearchTitle } from './SearchResultStyles';
+import { SearchCard, SearchList,SearchListItem, SearchTitle, NumberResult } from './SearchResultStyles';
 
 
 export default function SearchResultCard(){
@@ -8,9 +8,33 @@ export default function SearchResultCard(){
             <SearchTitle>Resultado da Busca</SearchTitle>
             <hr/>
             <SearchList>
-                <SearchListItem>Filmes</SearchListItem>
-                <SearchListItem>Seriados</SearchListItem>
-                <SearchListItem>Pessoas</SearchListItem>
+                <SearchListItem>
+                    Tudo
+                <NumberResult>
+                    129
+                </NumberResult>
+                </SearchListItem>
+
+                <SearchListItem>
+                    Filmes
+                <NumberResult>
+                     12
+                </NumberResult>
+                </SearchListItem>
+
+                <SearchListItem>
+                    Seriados
+                <NumberResult>
+                      13
+                </NumberResult>
+                </SearchListItem>
+
+                <SearchListItem>
+                    Pessoas
+                <NumberResult>
+                    23
+                </NumberResult>
+                </SearchListItem>
             </SearchList>
         </SearchCard>
     )
