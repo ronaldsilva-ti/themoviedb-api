@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import  Movies from './components/Movies/Movies';
+import SearchResult from './components/SearchResult/SearchResult';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return (           
+    <div style={{display:'flex'}}>
+        <SearchResult/>     
+      <div className="Container" style={{maxWidth: 980, margin: '30px auto'}} >     
+        <Movies/>
+        <Movies/>
+        <Movies/>
+      </div>
     </div>
-  );
+   
+    
+  )
 }
 
 export default App;
