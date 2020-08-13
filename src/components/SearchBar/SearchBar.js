@@ -24,8 +24,7 @@ export default function SearchBar(){
         axios.get(url)
             .then((response) => {      
             dispatch(clearState())        
-            dispatch(getResultMovie(response.data.total_results))
-            
+            dispatch(getResultMovie(response.data.total_results))            
             const movies = (response.data.results)            
             movies.map(movie => {
                 movie.poster_src = URL_IMAGE + movie.poster_path
