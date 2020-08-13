@@ -7,18 +7,27 @@ import {
     MoviesDescription,
     MoviesDate
   } from './MoviesCardStyles';
+import { URL_IMAGE } from '../../api';
 
-export default function MoviesCard({Movie}){
-    return(
-        <MoviesContainerCard>
-            <MoviesImage src={Movie.imageMovie} />
-            
-            <MoviesCardInfo>
-                <MoviesTitle>{Movie.name}</MoviesTitle>
-                <MoviesDate>{Movie.date}</MoviesDate>
-                <MoviesDescription>{Movie.description}</MoviesDescription>
-            </MoviesCardInfo>
 
-        </MoviesContainerCard>
+
+export default function MoviesCard({result}){     
+
+    const { poster_src, title, release_date, overview} = result;
+    return(       
+          <>    
+                    <MoviesContainerCard>
+                        <MoviesImage src={poster_src} />
+
+                        <MoviesCardInfo>
+                            <MoviesTitle>{title}</MoviesTitle>
+                            <MoviesDate>{release_date}</MoviesDate>
+                            <MoviesDescription>{overview}</MoviesDescription>
+                        </MoviesCardInfo>
+                    
+                    </MoviesContainerCard>
+
+              
+          </>
     )
 }
