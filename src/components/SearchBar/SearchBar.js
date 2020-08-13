@@ -1,11 +1,15 @@
 import React,{ useState } from 'react';
 import {  Search, SearchIcon, SearchInput,SearchIconClear } from './SearchBarStyles';
 import axios from 'axios';
+import {  API_KEY_ALT, URL_SEARCH, Language, URL_IMAGE,PAGE } from '../../api';
+import { useDispatch } from 'react-redux';
 
-import {  API_KEY_ALT, URL_SEARCH, Language, URL_IMAGE } from '../../api';
+//Actions
+import {listingMovie, clearState, getResultMovie} from '../../actions/index';
 
-export default function SearchBar({setResult}){
 
+export default function SearchBar(){
+    const  dispatch = useDispatch()
     const [ searchMovie, setSearchMovie ] = useState('');
 
     function handleChange(e){
@@ -15,20 +19,22 @@ export default function SearchBar({setResult}){
     function handleSubmit(e){
         e.preventDefault();
 
-        const url = `${URL_SEARCH}${searchMovie}${API_KEY_ALT}${Language}`
-        
-        axios.get(url)
-            .then((response) => {
-            const movies = (response.data.results)
+        const url = `${URL_SEARCH}${searchMovie}${PAGE}${API_KEY_ALT}${Language}`; 
 
+        axios.get(url)
+            .then((response) => {      
+            dispatch(clearState())        
+            dispatch(getResultMovie(response.data.total_results))
+            
+            const movies = (response.data.results)            
             movies.map(movie => {
                 movie.poster_src = URL_IMAGE + movie.poster_path
-                setResult(movie);
-            })        
+                dispatch(listingMovie(movie))
+            })             
+            }).catch(error =>{
+                console.log(error)
+            }) 
 
-           
-               
-            })
     }
 
     return(

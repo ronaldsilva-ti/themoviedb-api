@@ -1,8 +1,13 @@
 import React from 'react';
+import { useSelector  } from 'react-redux';
 import { SearchCard, SearchList,SearchListItem, SearchTitle, NumberResult } from './SearchResultStyles';
 
 
 export default function SearchResultCard(){
+    const numberResultsMovie = useSelector(state => state.numberResultsMovie) 
+    console.log(numberResultsMovie)
+
+
     return (
         <SearchCard>
             <SearchTitle>Resultado da Busca</SearchTitle>
@@ -18,7 +23,7 @@ export default function SearchResultCard(){
                 <SearchListItem>
                     Filmes
                 <NumberResult>
-                     12
+                   {numberResultsMovie}
                 </NumberResult>
                 </SearchListItem>
 

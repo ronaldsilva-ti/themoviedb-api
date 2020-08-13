@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { 
     MoviesContainerCard,
     MoviesCardInfo,
@@ -7,25 +8,32 @@ import {
     MoviesDescription,
     MoviesDate
   } from './MoviesCardStyles';
-import { URL_IMAGE } from '../../api';
 
 
 
-export default function MoviesCard({result}){     
+export default function MoviesCard(){   
+    
+    const movie = useSelector(state => state.movieList)   
 
-    const { poster_src, title, release_date, overview} = result;
     return(       
           <>    
-                    <MoviesContainerCard>
-                        <MoviesImage src={poster_src} />
+              {
+                  movie.map(movies => (
+                    <MoviesContainerCard key={movies.id}>
+                    <MoviesImage src={movies.poster_src} />
 
-                        <MoviesCardInfo>
-                            <MoviesTitle>{title}</MoviesTitle>
-                            <MoviesDate>{release_date}</MoviesDate>
-                            <MoviesDescription>{overview}</MoviesDescription>
-                        </MoviesCardInfo>
-                    
-                    </MoviesContainerCard>
+                    <MoviesCardInfo>
+                        <MoviesTitle>{movies.title}</MoviesTitle>
+                        <MoviesDate>{movies.release_date}</MoviesDate>
+                        <MoviesDescription>{movies.overview}</MoviesDescription>
+                    </MoviesCardInfo>
+            
+                </MoviesContainerCard>
+                  ))
+              }
+                      
+                       
+                   
 
               
           </>
