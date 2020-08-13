@@ -22,11 +22,13 @@ export const SearchTitle = styled.h3`
 export const SearchList = styled.ul`
     list-style:none;
     padding:0;    
+
 `
 export const SearchListItem = styled.li`
      margin:10px;
      display:flex;
      justify-content:space-between;
+     
 `
 export const NumberResult = styled.span`
     display: inline-flex;
