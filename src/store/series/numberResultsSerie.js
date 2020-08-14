@@ -1,4 +1,4 @@
-import { GET_NUMBER_RESULTS_MOVIE } from '../../types';
+import { GET_NUMBER_RESULTS_SERIE } from '../../types';
 
 
 const INITIAL_STATE = 0;
@@ -6,7 +6,7 @@ const INITIAL_STATE = 0;
 
 export default function reducer(state = INITIAL_STATE, action){
     switch(action.type){   
-        case GET_NUMBER_RESULTS_MOVIE :
+        case GET_NUMBER_RESULTS_SERIE :
             return action.payload;       
         default:
             return state;

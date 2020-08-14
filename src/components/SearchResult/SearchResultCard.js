@@ -1,11 +1,13 @@
 import React from 'react';
 import { useSelector  } from 'react-redux';
 import { SearchCard, SearchList,SearchListItem, SearchTitle, NumberResult } from './SearchResultStyles';
-import {BrowserRouter as Router, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 export default function SearchResultCard(){
     const numberResultsMovie = useSelector(state => state.numberResultsMovie) 
+    const numberResultsSeries = useSelector(state => state.numberResultsSeries) 
+
 
 
     return (
@@ -30,12 +32,14 @@ export default function SearchResultCard(){
                     </SearchListItem>
                 </NavLink>
 
-                <SearchListItem>
-                    Seriados
-                <NumberResult>
-                      13
-                </NumberResult>
-                </SearchListItem>
+                <NavLink to='/series'  style={{ textDecoration: 'none' }}>
+                    <SearchListItem>
+                        Seriados
+                    <NumberResult>
+                        {numberResultsSeries}
+                    </NumberResult>
+                    </SearchListItem>
+                </NavLink>
 
                 <SearchListItem>
                     Pessoas

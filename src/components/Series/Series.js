@@ -1,6 +1,7 @@
 import React from 'react';
+import SeriesCard from './SeriesCard';
 
 
-export default function Series(){
-    return <h1>Series</h1>
+export default function Series(){ 
+    return <SeriesCard />
 }

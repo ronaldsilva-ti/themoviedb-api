@@ -1,4 +1,7 @@
-export const URL_SEARCH = 'https://api.themoviedb.org/3/search/movie?query=';
+export const URL_SEARCH_MOVIE = 'https://api.themoviedb.org/3/search/movie?query=';
+export const URL_SEARCH_SERIE = 'https://api.themoviedb.org/3/search/tv?query=';
+
+
 export const Language = '&language=pt-BR';
 export const API_KEY = 'e2e6c0526e3737f2381684d2fd63d354';
 export const API_KEY_ALT = '&api_key=e2e6c0526e3737f2381684d2fd63d354';
