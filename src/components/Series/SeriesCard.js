@@ -13,7 +13,7 @@ import {
 
 export default function SeriesCard(){   
     
-    const serie = useSelector(state => state.series);
+    const serie = useSelector(state => state.seriesList);
 
     return(       
           <>    
@@ -23,8 +23,8 @@ export default function SeriesCard(){
                     <SeriesImage src={series.poster_src} />
 
                     <SeriesCardInfo>
-                        <SeriesTitle>{series.title}</SeriesTitle>
-                        <SeriesDate>{series.release_date}</SeriesDate>
+                        <SeriesTitle>{series.original_name}</SeriesTitle>
+                        <SeriesDate>{series.first_air_date}</SeriesDate>
                         <SeriesDescription>{series.overview}</SeriesDescription>
                     </SeriesCardInfo>
             

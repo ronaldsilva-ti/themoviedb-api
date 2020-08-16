@@ -15,7 +15,7 @@ export default function RouterPages(){
                 <Route  path="/" exact component={ All } />
                 <Route  path="/filmes" exact component={ Movies } />
                 <Route  path="/series" exact component={ Series } />
-                <Route  path="/pessoas" exact component={ People } />
+                <Route  path="/people" exact component={ People } />
             </Switch>
     )
 }

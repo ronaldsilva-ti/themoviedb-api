@@ -5,25 +5,27 @@ import {  API_KEY_ALT, URL_SEARCH_MOVIE, Language, URL_IMAGE,PAGE } from '../../
 import { useDispatch } from 'react-redux';
 
 //Actions
-import {listingMovie, clearState, getResultMovie} from '../../actions/index';
-import {seriesActions}  from '../../actions/SeriesActions';
+import { listingMovie, clearState, getResultMovie } from '../../actions/index';
+import { seriesActions }  from '../../actions/SeriesActions';
+import { PeopleActions } from '../../actions/PeopleActions';
 
 
 
 export default function SearchBar(){
     const  dispatch = useDispatch()
-    const [ searchMovie, setSearchMovie ] = useState('');
+    const [ search, setSearch ] = useState('');
 
     function handleChange(e){
-         setSearchMovie(e.target.value)
+         setSearch(e.target.value)
          
     }
 
  async function handleSubmit(e){
         e.preventDefault();  
-        dispatch(seriesActions(searchMovie))      
+        dispatch(seriesActions(search))  
+        dispatch(PeopleActions(search))    
         try {
-            const URL_MOVIE = `${URL_SEARCH_MOVIE}${searchMovie}${PAGE}${API_KEY_ALT}${Language}`; 
+            const URL_MOVIE = `${URL_SEARCH_MOVIE}${search}${PAGE}${API_KEY_ALT}${Language}`; 
             const response = await axios.get(URL_MOVIE)
             dispatch(clearState())        
             dispatch(getResultMovie(response.data.total_results))             

@@ -3,15 +3,18 @@ import thunk from 'redux-thunk';
 
 import movieList from './movie';
 import numberResultsMovie from './movie/numberResultsMovie';
-import series from './series/index'
+import seriesList from './series/index'
 import numberResultsSeries from './series/numberResultsSerie';
+import peopleList from './people/index';
 
 
 const rootReducer = combineReducers({
     movieList,
     numberResultsMovie,
-    series,
-    numberResultsSeries
+    seriesList,
+    numberResultsSeries,
+    peopleList
+
 });
 
 

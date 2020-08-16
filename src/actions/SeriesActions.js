@@ -14,6 +14,7 @@ export const seriesActions = (serie) => {
             series.forEach(serie => {
                 serie.poster_src = URL_IMAGE + serie.poster_path
                 dispatch(listingSerie(serie))
+
             })  
         } catch (error) {
             console.log(error)

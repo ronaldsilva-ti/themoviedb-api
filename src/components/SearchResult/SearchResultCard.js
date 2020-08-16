@@ -41,12 +41,14 @@ export default function SearchResultCard(){
                     </SearchListItem>
                 </NavLink>
 
-                <SearchListItem>
-                    Pessoas
-                <NumberResult>
-                    23
-                </NumberResult>
-                </SearchListItem>
+               <NavLink  to='/people'  style={{ textDecoration: 'none' }}>
+                    <SearchListItem>
+                        Pessoas
+                    <NumberResult>
+                        23
+                    </NumberResult>
+                    </SearchListItem>
+               </NavLink>
             </SearchList>
         </SearchCard>
     )
