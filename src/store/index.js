@@ -6,7 +6,7 @@ import numberResultsMovie from './movie/numberResultsMovie';
 import seriesList from './series/index'
 import numberResultsSeries from './series/numberResultsSerie';
 import peopleList from './people/index';
-import numberResultPeople from './people/numberResultPeople';
+import numberResultsPeople from './people/numberResultPeople';
 
 
 const rootReducer = combineReducers({
@@ -15,7 +15,7 @@ const rootReducer = combineReducers({
     seriesList,
     numberResultsSeries,
     peopleList,
-    numberResultPeople
+    numberResultsPeople
 
 });
 

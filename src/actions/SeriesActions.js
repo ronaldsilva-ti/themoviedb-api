@@ -1,15 +1,23 @@
 import { CLEAR_SERIE, GET_NUMBER_RESULTS_SERIE, GET_SERIE } from '../types';
 import axios from 'axios';
-import {  URL_IMAGE } from '../api';
+import {  API_KEY_ALT, URL_SEARCH_SERIE, Language, URL_IMAGE,PAGE } from '../api/index';
 
 
-export const seriesActions = (serie) => {
+
+export const SeriesActions = (serie) => {
     return async ( dispatch ) => {
         try {
-            const URL_SERIE = `https://api.themoviedb.org/3/search/tv?query=${serie}&page=1&api_key=e2e6c0526e3737f2381684d2fd63d354`; 
+            const URL_SERIE = `${URL_SEARCH_SERIE}${serie}${PAGE}${API_KEY_ALT}${Language}`; 
             const response = await axios.get(URL_SERIE)
-            dispatch(clearState())        
-            dispatch(getResultSerie(response.data.total_results))             
+            dispatch(clearState())    
+            
+            const totalAmount = response.data.total_results;
+            const perPage = response.data.total_pages;
+            const resultPeople = totalAmount / perPage;
+
+            // console.log(resultPeople);
+
+            dispatch(getResultSerie(resultPeople))             
             const series = (response.data.results)            
             series.forEach(serie => {
                 serie.poster_src = URL_IMAGE + serie.poster_path

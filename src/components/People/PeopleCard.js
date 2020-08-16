@@ -14,7 +14,6 @@ import {
 export default function PeopleCard(){   
     
     const peoples = useSelector(state => state.peopleList)   
-    console.log(peoples.title)
 
     return(       
           <>    

@@ -7,7 +7,15 @@ import { NavLink } from 'react-router-dom';
 export default function SearchResultCard(){
     const numberResultsMovie = useSelector(state => state.numberResultsMovie) 
     const numberResultsSeries = useSelector(state => state.numberResultsSeries) 
+    const numberResultsPeople = useSelector(state => state.numberResultsPeople) 
 
+    const resultMovie =  Math.round(numberResultsMovie);
+    const resultSerie = Math.round(numberResultsSeries);
+    const resultPeople = Math.round(numberResultsPeople);
+    
+    const totalResults = Math.round(resultMovie +  resultSerie  + resultPeople);
+    
+    
 
 
     return (
@@ -19,7 +27,7 @@ export default function SearchResultCard(){
                     <SearchListItem>
                         Tudo
                         <NumberResult>
-                            129
+                            {totalResults}
                         </NumberResult>
                     </SearchListItem>
                 </NavLink>
@@ -27,7 +35,7 @@ export default function SearchResultCard(){
                     <SearchListItem>
                         Filmes
                     <NumberResult>
-                    {numberResultsMovie}
+                    {resultMovie}
                     </NumberResult>
                     </SearchListItem>
                 </NavLink>
@@ -36,7 +44,7 @@ export default function SearchResultCard(){
                     <SearchListItem>
                         Seriados
                     <NumberResult>
-                        {numberResultsSeries}
+                        {resultSerie}
                     </NumberResult>
                     </SearchListItem>
                 </NavLink>
@@ -45,7 +53,7 @@ export default function SearchResultCard(){
                     <SearchListItem>
                         Pessoas
                     <NumberResult>
-                        23
+                        {resultPeople}
                     </NumberResult>
                     </SearchListItem>
                </NavLink>

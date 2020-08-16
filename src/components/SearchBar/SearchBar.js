@@ -3,9 +3,9 @@ import {  Search, SearchIcon, SearchInput,SearchIconClear } from './SearchBarSty
 import { useDispatch } from 'react-redux';
 
 //Actions
-import { seriesActions }  from '../../actions/SeriesActions';
+import { SeriesActions }  from '../../actions/SeriesActions';
 import { PeopleActions } from '../../actions/PeopleActions';
-import {  moviesActions } from '../../actions/MovieAction';
+import { MoviesActions } from '../../actions/MovieAction';
 
 
 export default function SearchBar(){
@@ -19,9 +19,9 @@ export default function SearchBar(){
 
 function handleSubmit(e){
         e.preventDefault();  
-        dispatch(seriesActions(search))  
+        dispatch(SeriesActions(search))  
         dispatch(PeopleActions(search))
-        dispatch(moviesActions(search))    
+        dispatch(MoviesActions(search))    
     }
 
     return(

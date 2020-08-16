@@ -1,5 +1,6 @@
 export const URL_SEARCH_MOVIE = 'https://api.themoviedb.org/3/search/movie?query=';
 export const URL_SEARCH_SERIE = 'https://api.themoviedb.org/3/search/tv?query=';
+export const URL_SEARCH_PEOPLE = 'https://api.themoviedb.org/3/search/person?query='
 
 
 export const Language = '&language=pt-BR';
