@@ -7,6 +7,7 @@ export const SeriesContainerCard = styled.div`
     display:flex;
     box-sizing: border-box;
     margin-bottom:25px;
+    margin-top:30px;
 `;
 export const SeriesCardInfo = styled.div`
     padding:10px;

@@ -7,6 +7,8 @@ export const PeopleContainerCard = styled.div`
     display:flex;
     box-sizing: border-box;
     margin-bottom:25px;
+    margin-top:30px;
+
 `;
 export const PeopleCardInfo = styled.div`
     padding:10px;
