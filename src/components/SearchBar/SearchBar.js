@@ -1,14 +1,11 @@
 import React,{ useState } from 'react';
 import {  Search, SearchIcon, SearchInput,SearchIconClear } from './SearchBarStyles';
-import axios from 'axios';
-import {  API_KEY_ALT, URL_SEARCH_MOVIE, Language, URL_IMAGE,PAGE } from '../../api';
 import { useDispatch } from 'react-redux';
 
 //Actions
-import { listingMovie, clearState, getResultMovie } from '../../actions/index';
 import { seriesActions }  from '../../actions/SeriesActions';
 import { PeopleActions } from '../../actions/PeopleActions';
-
+import {  moviesActions } from '../../actions/MovieAction';
 
 
 export default function SearchBar(){
@@ -20,26 +17,11 @@ export default function SearchBar(){
          
     }
 
- async function handleSubmit(e){
+function handleSubmit(e){
         e.preventDefault();  
         dispatch(seriesActions(search))  
-        dispatch(PeopleActions(search))    
-        try {
-            const URL_MOVIE = `${URL_SEARCH_MOVIE}${search}${PAGE}${API_KEY_ALT}${Language}`; 
-            const response = await axios.get(URL_MOVIE)
-            dispatch(clearState())        
-            dispatch(getResultMovie(response.data.total_results))             
-            const movies = (response.data.results)            
-            movies.forEach(movie => {
-                movie.poster_src = URL_IMAGE + movie.poster_path
-                dispatch(listingMovie(movie))
-            })  
-        } catch (error) {
-            console.log(error)
-        }
-
-                  
-
+        dispatch(PeopleActions(search))
+        dispatch(moviesActions(search))    
     }
 
     return(

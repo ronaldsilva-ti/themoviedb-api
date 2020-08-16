@@ -23,7 +23,7 @@ export const seriesActions = (serie) => {
 }
 
 const clearState = () => ({ type:CLEAR_SERIE })
-const listingSerie = (serie) => ({ type: GET_SERIE, payload: serie })
+const listingSerie = serie => ({ type: GET_SERIE, payload: serie })
 const getResultSerie = serie => ({ type:GET_NUMBER_RESULTS_SERIE, payload:serie })
 
                  
