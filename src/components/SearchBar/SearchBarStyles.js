@@ -19,6 +19,8 @@ export const SearchInput = styled.input`
     width:90%;
     border:0;
     padding:15px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size:15px;
     &:focus {
         outline: none;
     }    

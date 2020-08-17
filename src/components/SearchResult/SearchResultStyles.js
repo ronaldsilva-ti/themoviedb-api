@@ -29,6 +29,13 @@ export const SearchListItem = styled.li`
      margin:10px;
      display:flex;
      justify-content:space-between;
+     padding: 10px 20px;
+
+     &:hover{
+        background: rgba(0,0,0,0.08);  
+         color:black;
+         font-weight:bold;         
+     }
      
 `
 export const NumberResult = styled.span`
@@ -40,9 +47,6 @@ export const NumberResult = styled.span`
     background: rgba(0,0,0,0.08);
     border-radius: 8px;
     color:#000;
-
-
-
 `
 
 

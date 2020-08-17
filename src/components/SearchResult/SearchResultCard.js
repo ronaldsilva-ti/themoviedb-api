@@ -13,10 +13,7 @@ export default function SearchResultCard(){
     const resultSerie = Math.round(numberResultsSeries);
     const resultPeople = Math.round(numberResultsPeople);
     
-    const totalResults = Math.round(resultMovie +  resultSerie  + resultPeople);
-    
-    
-
+    const totalResults = Math.round(resultMovie +  resultSerie  + resultPeople);    
 
     return (
         <SearchCard>
@@ -57,6 +54,7 @@ export default function SearchResultCard(){
                     </NumberResult>
                     </SearchListItem>
                </NavLink>
+               
             </SearchList>
         </SearchCard>
     )

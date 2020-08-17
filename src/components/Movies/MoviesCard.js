@@ -17,9 +17,11 @@ export default function MoviesCard(){
 
     return(       
           <>    
+                
               {
+                   
                   movie.map(movies => (
-                    <MoviesContainerCard key={movies.id}>
+                <MoviesContainerCard key={movies.id}>
                     <MoviesImage src={movies.poster_src} />
 
                     <MoviesCardInfo>

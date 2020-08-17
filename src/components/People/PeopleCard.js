@@ -8,33 +8,25 @@ import {
     PeopleDescription,
     
   } from './PeopleCardStyles';
-
-
-
+  
 export default function PeopleCard(){   
     
     const peoples = useSelector(state => state.peopleList)   
 
     return(       
-          <>    
+          <>                
               {
                   peoples.map(people => (
-                    <PeopleContainerCard key={people.id}>
-                    <PeopleImage src={people.poster_src} />
+                  <PeopleContainerCard key={people.id}>
+                      <PeopleImage src={people.poster_src} />
 
-                    <PeopleCardInfo>
-                        <PeopleTitle>{people.name}</PeopleTitle>
-                        <PeopleDescription>{people.overview}</PeopleDescription>
-                    </PeopleCardInfo>
-            
-                </PeopleContainerCard>
+                      <PeopleCardInfo>
+                          <PeopleTitle>{people.name}</PeopleTitle>
+                          <PeopleDescription>{people.overview}</PeopleDescription>
+                      </PeopleCardInfo>              
+                 </PeopleContainerCard>
                   ))
               }
-                      
-                       
-                   
-
-              
           </>
     )
 }
