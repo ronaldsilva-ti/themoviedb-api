@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+
 import { 
     MoviesContainerCard,
     MoviesCardInfo,
@@ -11,33 +11,21 @@ import {
 
 
 
-export default function MoviesCard(){   
-    
-    const movie = useSelector(state => state.movieList)   
+export default function MoviesCard({item, onClickDetails,setContentMovie}){  
+    setContentMovie(item);
+
 
     return(       
-          <>    
+          <>        
+                    <MoviesContainerCard key={item.id}>              
+                        <MoviesImage src={item.poster_src} />
+                        <MoviesCardInfo>
+                            <MoviesTitle onClick={onClickDetails}>{item.title}</MoviesTitle>
+                            <MoviesDate>{item.release_date}</MoviesDate>
+                            <MoviesDescription>{item.overview}</MoviesDescription>
+                        </MoviesCardInfo>                
+                    </MoviesContainerCard>                 
                 
-              {
-                   
-                  movie.map(movies => (
-                <MoviesContainerCard key={movies.id}>
-                    <MoviesImage src={movies.poster_src} />
-
-                    <MoviesCardInfo>
-                        <MoviesTitle>{movies.title}</MoviesTitle>
-                        <MoviesDate>{movies.release_date}</MoviesDate>
-                        <MoviesDescription>{movies.overview}</MoviesDescription>
-                    </MoviesCardInfo>
-            
-                </MoviesContainerCard>
-                  ))
-              }
-                      
-                       
-                   
-
-              
           </>
     )
 }
