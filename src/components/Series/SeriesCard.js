@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { 
     SeriesContainerCard,
     SeriesCardInfo,
@@ -9,26 +8,18 @@ import {
     SeriesDate
   } from './SeriesCardStyles';
   
-export default function SeriesCard(){   
-    
-    const serie = useSelector(state => state.seriesList);
-
+export default function SeriesCard({item, onClickDetails}){      
+  
     return(       
           <>  
-              {
-                  serie.map(series => (
-                    <SeriesContainerCard key={series.id}>
-                      <SeriesImage src={series.poster_src} />
-
+                <SeriesContainerCard key={item.id}>
+                      <SeriesImage src={item.poster_src} />
                       <SeriesCardInfo>
-                          <SeriesTitle>{series.original_name}</SeriesTitle>
-                          <SeriesDate>{series.first_air_date}</SeriesDate>
-                          <SeriesDescription>{series.overview}</SeriesDescription>
+                          <SeriesTitle onClick={onClickDetails}>{item.title}</SeriesTitle>
+                          <SeriesDate>{item.first_air_date}</SeriesDate>
+                          <SeriesDescription>{item.overview}</SeriesDescription>
                       </SeriesCardInfo>            
                 </SeriesContainerCard>
-                  ))
-              }   
-              
           </>
     )
 }

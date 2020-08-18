@@ -20,7 +20,8 @@ export const SeriesActions = (serie) => {
             dispatch(getResultSerie(resultPeople))             
             const series = (response.data.results)            
             series.forEach(serie => {
-                serie.poster_src = URL_IMAGE + serie.poster_path
+                serie.poster_src = URL_IMAGE + serie.poster_path;
+                serie.title  = serie.original_name;
                 dispatch(listingSerie(serie))
 
             })  

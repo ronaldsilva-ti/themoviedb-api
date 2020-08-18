@@ -7,7 +7,7 @@ export const UiModal = styled.div`
     margin: 80px auto 0 auto;
     padding:50px;
 `
-export const UiModal__Overlay = styled.div`
+export const UiModalOverlay = styled.div`
     position: fixed;
     top:0;
     left:0;

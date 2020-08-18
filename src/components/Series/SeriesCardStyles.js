@@ -13,7 +13,7 @@ export const SeriesCardInfo = styled.div`
     padding:10px;
     box-sizing: border-box;
 `;
-export const SeriesTitle = styled.h2`
+export const SeriesTitle = styled.button`
     font-size: 1.2em;
     margin-bottom: 0;
     display: -webkit-box;
@@ -21,6 +21,9 @@ export const SeriesTitle = styled.h2`
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
     overflow: hidden;
+    background-color:unset;
+    border:unset;
+    cursor: pointer;
 `;
 export const SeriesImage = styled.img`
     min-width: 94px;
