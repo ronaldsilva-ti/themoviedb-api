@@ -11,10 +11,8 @@ import {
 
 
 
-export default function MoviesCard({item, onClickDetails,setContentMovie}){  
-    setContentMovie(item);
-
-
+export default function MoviesCard({ item, onClickDetails }){  
+    
     return(       
           <>        
                     <MoviesContainerCard key={item.id}>              

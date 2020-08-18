@@ -7,8 +7,7 @@ import Modal from '../Modal/index';
 export default function Movies(){  
     
     const movie = useSelector(state => state.movieList);
-    const [movieItem, setMovieItem] = useState(null);
-    const [contentMovie, setContentMovie] = useState([])
+    const [item, setItem] = useState(null);
 
     return (
         <>
@@ -16,14 +15,16 @@ export default function Movies(){
                 movie.map(item => (
                     <MoviesCard 
                         item={item}
-                        onClickDetails={() => setMovieItem(item.id)} 
-                        setContentMovie={setContentMovie}                   
+                        onClickDetails={() => setItem(item)} 
                     />
                 ))
             }
 
-            <Modal isOpen={Boolean(movieItem)} onClickClose={() => setMovieItem(null)}>
-                <h1>Modal</h1>
+            <Modal 
+                item={item} 
+                isOpen={Boolean(item)} 
+                onClickClose={() => setItem(null)}
+            >               
             </Modal>
 
         </>

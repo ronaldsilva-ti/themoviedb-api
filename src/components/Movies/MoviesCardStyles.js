@@ -27,7 +27,6 @@ export const MoviesTitle = styled.button`
 `;
 export const MoviesImage = styled.img`
     min-width: 94px;
-    width: 94px;
     height: 141px;
     border: 1px solid;
     border-top-left-radius: 8px;

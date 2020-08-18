@@ -24,3 +24,18 @@ export const CloseButton = styled.button`
     height:35px;
     cursor: pointer;    
 `
+
+export const ContainerModal = styled.div`
+    display:flex;
+    margin-top:10px;
+    flex-wrap: wrap;
+`
+export const  Paragraph = styled.p``
+
+export const  FilmCover = styled.img`
+    min-width: 300px;
+    height: 500px;
+    border: 1px solid; 
+    margin: auto;
+    margin-top:30px;
+`
