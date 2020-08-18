@@ -8,8 +8,6 @@ import { PeopleActions } from '../../actions/PeopleActions';
 import { MoviesActions } from '../../actions/MovieAction';
 import { history } from '../../actions/searchActions';
 
-import Navbar from '../../components/Navbar/index';
-
 
 export default function SearchBar(){
     const  dispatch = useDispatch();    

@@ -30,7 +30,7 @@ export const ListItem = styled.li`
 `;
 
 export const ListFavorite = styled.li`
-   margin-left:685px;
+   margin-left:676px;
    padding:15px;
    color:white;
    background-color:rgba(1,180,228);

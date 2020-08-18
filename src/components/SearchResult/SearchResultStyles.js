@@ -35,15 +35,26 @@ export const SearchListItem = styled.li`
         background: rgba(0,0,0,0.08);  
          color:black;
          font-weight:bold;         
-     }
-     
+     }     
 `
+
+export const isSelected = styled.li`
+    margin:10px;
+    display:flex;
+    justify-content:space-between;
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.08);  
+    color:black;
+    font-weight:bold;   
+`
+
+
 export const NumberResult = styled.span`
     display: inline-flex;
     align-items: center;
     font-size: 0.8em;
     font-weight: 300;
-    padding: 0px 10px;
+    padding: 0px 15px;
     background: rgba(0,0,0,0.08);
     border-radius: 8px;
     color:#000;
