@@ -1,5 +1,6 @@
 import React from 'react';
 import { parseISO, format } from 'date-fns';
+import { useDispatch } from 'react-redux';
 
 import { 
     MoviesContainerCard,
@@ -7,10 +8,16 @@ import {
     MoviesTitle,
     MoviesImage,
     MoviesDescription,
-    MoviesDate
+    MoviesDate,
+    FavoriteButton,
+    Container
   } from './MoviesCardStyles';
 
+import { addFavorite } from '../../actions/Favorite';
+
 export default function MoviesCard({ item, onClickDetails }){   
+
+    const dispatch = useDispatch()
 
     const date = item.release_date;
     const parsedDate = parseISO(date);  
@@ -27,10 +34,15 @@ export default function MoviesCard({ item, onClickDetails }){
                 <MoviesContainerCard key={item.id}>              
                     <MoviesImage src={item.poster_src} />
                     <MoviesCardInfo>
-                            <MoviesTitle onClick={onClickDetails}>{item.title}</MoviesTitle>
+                            <Container>
+                                <MoviesTitle onClick={onClickDetails}>{item.title}</MoviesTitle>                            
+                                <FavoriteButton onClick={() => dispatch(addFavorite(item))} >Favoritar</FavoriteButton>
+                            </Container>                            
+
                             <MoviesDate>{formattedDate}</MoviesDate>
                             <MoviesDescription>{item.overview}</MoviesDescription>
-                    </MoviesCardInfo>                
+                                
+                    </MoviesCardInfo>                              
                 </MoviesContainerCard>                 
                 
           </>

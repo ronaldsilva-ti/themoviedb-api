@@ -12,6 +12,8 @@ export const GET_NUMBER_RESULTS_PEOPLE = 'GET_NUMBER_RESULTS_PEOPLE';
 export const GET_PEOPLE = 'GET_PEOPLE';
 export const CLEAR_PEOPLE = 'CLEAR_PEOPLE'
 
+export const ADD_FAVORITE = 'ADD_FAVORITE'
+
 
 
 

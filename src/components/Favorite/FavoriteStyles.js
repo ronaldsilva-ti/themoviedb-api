@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MoviesContainerCard = styled.div`  
+export const FavoriteContainerCard = styled.div`  
     border-radius: 8px;
     border: 1px solid #C3c3c3;
     box-shadow: 0 2px 7px 0 rgba(0,0,0, 0.15);
@@ -9,11 +9,11 @@ export const MoviesContainerCard = styled.div`
     margin-bottom:25px;
     margin-top:30px;
 `;
-export const MoviesCardInfo = styled.div`
+export const FavoriteCardInfo = styled.div`
     padding:10px;
     box-sizing: border-box;
 `;
-export const MoviesTitle = styled.button`
+export const FavoriteTitle = styled.button`
     font-size: 1.2em;
     margin-bottom: 0;
     display: -webkit-box;
@@ -25,18 +25,18 @@ export const MoviesTitle = styled.button`
     border:unset;
     cursor: pointer;
 `;
-export const MoviesImage = styled.img`
+export const FavoriteImage = styled.img`
     min-width: 94px;
     height: 141px;
     border: 1px solid;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
 `;
-export const MoviesDate = styled.span`
+export const FavoriteDate = styled.span`
     margin-top:0;
     color: #999;
 `;
-export const MoviesDescription = styled.p`
+export const FavoriteDescription = styled.p`
     font-size: 1em;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -47,22 +47,4 @@ export const MoviesDescription = styled.p`
     margin-top:28px;
 `;
 
-export const FavoriteButton = styled.button`
-    left:0;
-    border:unset;
-    padding:7px;
-    cursor:pointer;
-    color:#000;
-    font-weight:bold;
-    background-color:unset;
-    &:hover{
-        border-bottom: 1px solid black;
-    }
-`
 
-export const Container = styled.div`
-    display:flex;
-    justify-content:space-between !important;
-
-
-`

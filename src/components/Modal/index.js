@@ -6,9 +6,7 @@ const portalRoot = document.getElementById('portal-root');
 
 
 export default function Modal({item, isOpen, onClickClose}){
-
     
-
     if (!isOpen) return null;
 
     return ReactDOM.createPortal(

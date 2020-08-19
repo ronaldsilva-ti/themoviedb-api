@@ -8,6 +8,7 @@ import numberResultsPeople from './people/numberResultPeople';
 import numberResultsMovie from './movie/numberResultsMovie';
 import numberResultsSeries from './series/numberResultsSerie';
 import history from './search/index';
+import favorite from './favorite/index';
 
 
 
@@ -18,7 +19,8 @@ const rootReducer = combineReducers({
     numberResultsSeries,
     peopleList,
     numberResultsPeople,
-    history
+    history,
+    favorite
 });
 
 
