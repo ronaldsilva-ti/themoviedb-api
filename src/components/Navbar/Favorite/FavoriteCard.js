@@ -10,7 +10,7 @@ import {
     FavoriteDate,
   } from './FavoriteStyles';
 
-export default function FavoriteCard({ item }){   
+export default function FavoriteCard({ item,onClickDetails }){   
 
     // const date = item.release_date;
     // const parsedDate = parseISO(date);  
@@ -28,7 +28,7 @@ export default function FavoriteCard({ item }){
                 <FavoriteContainerCard key={item.id}>              
                     <FavoriteImage src={item.poster_src} />
                     <FavoriteCardInfo>
-                            <FavoriteTitle>{item.title}</FavoriteTitle>
+                            <FavoriteTitle onClick={onClickDetails}>{item.title}</FavoriteTitle>
                             <FavoriteDate>{item.release_date}</FavoriteDate>
                             <FavoriteDescription>{item.overview}</FavoriteDescription>
                     </FavoriteCardInfo>                
