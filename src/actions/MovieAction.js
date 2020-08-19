@@ -1,14 +1,15 @@
 import { GET_MOVIE, CLEAR, GET_NUMBER_RESULTS_MOVIE} from '../types';
 import axios from 'axios';
 import {  API_KEY_ALT, URL_SEARCH_MOVIE, Language, URL_IMAGE,PAGE } from '../api/index';
-
+import { addHistoric } from './Historic';
 
 export const MoviesActions = (movie) => {
     return async ( dispatch ) => {
         try {
             const URL_MOVIE = `${URL_SEARCH_MOVIE}${movie}${PAGE}${API_KEY_ALT}${Language}`; 
             const response = await axios.get(URL_MOVIE)
-            dispatch(clearState())        
+            dispatch(clearState())  
+            dispatch(addHistoric( response, movie ))      
 
             const totalAmount = response.data.total_results;
             const perPage = response.data.total_pages;

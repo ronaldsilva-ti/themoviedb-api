@@ -1,56 +1,31 @@
-// import React,{useState, useEffect} from 'react';
-// import { useSelector } from 'react-redux';
-// import styled from 'styled-components';
-// import { useDispatch } from 'react-redux';
-
-// import { SeriesActions }  from '../../actions/SeriesActions';
-// import { PeopleActions } from '../../actions/PeopleActions';
-// import { MoviesActions } from '../../actions/MovieAction';
-
-// export default  function Historic(){
-
-//     const dispatch = useDispatch()
-//     const [ search, setSearch ] = useState([]); 
-
-//     const itens = useSelector(state => state.history)  
-    
-//     useEffect(() => {
-//         setSearch(itens)
-//     },[itens])
-
-        
-//   function LinkItem(){
-//     dispatch(SeriesActions(search))
-//     dispatch(PeopleActions(search))
-//     dispatch(MoviesActions(search))
-
-//   }
-    
-//     return(
-//         <>
-//             <Title>Historico</Title>
-//             <List>
-//                 {
-//                     search.map(item => (
-//                         <ListItem>
-//                             <button onClick={LinkItem}>{item}</button>
-//                         </ListItem>
-//                     ))
-//                 }
-              
-//             </List>
-//         </>
-//     )
-// }
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components'
 
 
-// const Title = styled.h1``
-// const List = styled.ul`
-//     list-style:none;
-//     color: rgba(1,180,228);
-//     margin-top:5px;
-//     font-size:1.5rem;
-// `
-// const ListItem = styled.li``
 
-// const Button = styled.button``
+const Title = styled.h1``
+const List = styled.p`
+  margin-top:10px;
+  color:#01B4E4;
+`
+const Container = styled.div`
+  margin-top:20px;
+`
+
+
+export default function Historic(){
+
+    const history = useSelector(state => state.historic);
+    return(
+      <Container>
+        <Title>Historico</Title>
+        {
+          history.map(item => (
+           <List>{item.name}</List>
+          ))
+        }
+            
+      </Container>
+    )
+}

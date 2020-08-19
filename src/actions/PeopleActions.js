@@ -18,7 +18,8 @@ export const PeopleActions = (people) => {
             dispatch(getResultPeople(resultPeople))   
             const peoples = (response.data.results)            
             peoples.forEach(people => {
-                people.poster_src = URL_IMAGE + people.poster_path
+                // people.poster_src = URL_IMAGE + people.poster_path
+                people.poster_src = 'https://www.worldfuturecouncil.org/wp-content/uploads/2020/06/blank-profile-picture-973460_1280-1.png'
                 dispatch(listingPeople(people))
                 //  console.log(people)
             })  

@@ -14,6 +14,8 @@ export const CLEAR_PEOPLE = 'CLEAR_PEOPLE'
 
 export const ADD_FAVORITE = 'ADD_FAVORITE'
 
+export const ADD_HISTORIC = 'ADD_HISTORIC'
+
 
 
 

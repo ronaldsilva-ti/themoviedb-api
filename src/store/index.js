@@ -9,7 +9,7 @@ import numberResultsMovie from './movie/numberResultsMovie';
 import numberResultsSeries from './series/numberResultsSerie';
 import history from './search/index';
 import favorite from './favorite/index';
-
+import historic from './historic/index';
 
 
 const rootReducer = combineReducers({
@@ -20,7 +20,8 @@ const rootReducer = combineReducers({
     peopleList,
     numberResultsPeople,
     history,
-    favorite
+    favorite,
+    historic
 });
 
 
