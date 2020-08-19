@@ -47,3 +47,21 @@ export const SeriesDescription = styled.p`
     margin: 0;
     margin-top:28px;
 `;
+
+export const FavoriteButton = styled.button`
+    left:0;
+    border:unset;
+    padding:7px;
+    cursor:pointer;
+    color:#000;
+    font-weight:bold;
+    background-color:unset;
+    &:hover{
+        border-bottom: 1px solid black;
+    }
+`
+
+export const Container = styled.div`
+    display:flex;
+    justify-content:space-between !important;
+`

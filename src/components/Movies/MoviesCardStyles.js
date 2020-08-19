@@ -63,6 +63,4 @@ export const FavoriteButton = styled.button`
 export const Container = styled.div`
     display:flex;
     justify-content:space-between !important;
-
-
 `

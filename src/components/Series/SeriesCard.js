@@ -1,5 +1,6 @@
 import React from 'react';
 import { parseISO, format } from 'date-fns';
+import { useDispatch } from 'react-redux';
 
 import { 
     SeriesContainerCard,
@@ -7,8 +8,11 @@ import {
     SeriesTitle,
     SeriesImage,
     SeriesDescription,
-    SeriesDate
+    SeriesDate,
+    Container,
+    FavoriteButton
   } from './SeriesCardStyles';
+  import { addFavorite } from '../../actions/Favorite';
   
 export default function SeriesCard({item, onClickDetails}){  
 
@@ -20,6 +24,7 @@ export default function SeriesCard({item, onClickDetails}){
       //     " dd'/'MM'/'yyyy "
       //   );
 
+      const dispatch = useDispatch()
 
         
     return(       
@@ -27,7 +32,10 @@ export default function SeriesCard({item, onClickDetails}){
                 <SeriesContainerCard key={item.id}>
                       <SeriesImage src={item.poster_src} />
                       <SeriesCardInfo>
-                          <SeriesTitle onClick={onClickDetails}>{item.title}</SeriesTitle>
+                        <Container>
+                               <SeriesTitle onClick={onClickDetails}>{item.title}</SeriesTitle>
+                               <FavoriteButton onClick={() => dispatch(addFavorite(item))} >Favoritar</FavoriteButton>
+                        </Container>                          
                           <SeriesDate>{item.first_air_date}</SeriesDate>
                           <SeriesDescription>{item.overview}</SeriesDescription>
                       </SeriesCardInfo>            
