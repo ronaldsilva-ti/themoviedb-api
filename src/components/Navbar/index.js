@@ -8,11 +8,21 @@ export default function Navbar(){
     return(
         <>
             <Header>
-                <Logo src={logo} alt="The Movie Database (TMDb)"/>
+                <NavLink  to={'/'} >
+                    <Logo src={logo} alt="The Movie Database (TMDb)"/>
+                </NavLink>
                     <List>
-                        <ListItem>Filmes</ListItem>
-                        <ListItem>Series</ListItem>
-                        <ListItem>Pessoas</ListItem>
+                        <NavLink to={'/filmes'} style={{ textDecoration: 'none', color:'white' }}>
+                             <ListItem>Filmes</ListItem>
+                        </NavLink>    
+                        <NavLink to={'/series'} style={{ textDecoration: 'none', color:'white' }}>
+                            <ListItem>Series</ListItem>
+                        </NavLink>                    
+                        
+                        <NavLink to={'/people'} style={{ textDecoration: 'none', color:'white' }}>
+                            <ListItem>Pessoas</ListItem>
+                        </NavLink>
+                       
                         <NavLink to={'/historic'} style={{ textDecoration: 'none', color:'white' }}>
                             <ListItem>Historico</ListItem>
                         </NavLink>

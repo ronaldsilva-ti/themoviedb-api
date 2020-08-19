@@ -1,6 +1,6 @@
 import { CLEAR_PEOPLE, GET_NUMBER_RESULTS_PEOPLE,GET_PEOPLE } from '../types';
 import axios from 'axios';
-import {  API_KEY_ALT, URL_SEARCH_PEOPLE, Language, URL_IMAGE,PAGE } from '../api/index';
+import {  API_KEY_ALT, URL_SEARCH_PEOPLE, Language, PAGE } from '../api/index';
 
 
 

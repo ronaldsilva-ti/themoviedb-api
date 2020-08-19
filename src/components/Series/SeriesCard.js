@@ -21,7 +21,6 @@ export default function SeriesCard({item, onClickDetails}){
       const date = item.first_air_date;
 
       const dateFormart =  moment(new Date(date)).format("DD/MM/YYYY");
-      console.log(dateFormart)
         
     return(       
           <>  
