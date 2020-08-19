@@ -7,6 +7,8 @@ import Movies from '../components/Movies/Movies';
 import Series from '../components/Series/Series';
 import People from '../components/People/People';
 import Historic from '../components/Historic/Historic';
+import Favorite from '../components/Favorite/index';
+
 
 
 
@@ -18,6 +20,8 @@ export default function RouterPages(){
                 <Route  path="/series" exact component={ Series } />
                 <Route  path="/people" exact component={ People } />
                 <Route  path="/historic" exact component={ Historic } />
+                <Route  path="/favorite" exact component={ Favorite } />
+
 
             </Switch>
     )

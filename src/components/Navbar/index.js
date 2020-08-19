@@ -20,7 +20,10 @@ export default function Navbar(){
                     </List>
 
                     <List>
-                        <ListFavorite>Favoritos</ListFavorite>
+                        <NavLink to={'/favorite'} style={{ textDecoration: 'none', color:'white' }}>
+                            <ListFavorite>Favoritos</ListFavorite>
+                        </NavLink>
+                       
                     </List>
             </Header>
         </>

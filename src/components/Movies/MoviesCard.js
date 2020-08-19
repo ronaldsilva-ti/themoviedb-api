@@ -1,4 +1,5 @@
 import React from 'react';
+import { parseISO, format } from 'date-fns';
 
 import { 
     MoviesContainerCard,
@@ -9,20 +10,28 @@ import {
     MoviesDate
   } from './MoviesCardStyles';
 
+export default function MoviesCard({ item, onClickDetails }){   
 
+    const date = item.release_date;
+    const parsedDate = parseISO(date);  
 
-export default function MoviesCard({ item, onClickDetails }){  
+    const formattedDate = format(
+        parsedDate, 
+        " dd'/'MM'/'yyyy "
+      );
+    
+    // console.log(formattedDate)
     
     return(       
           <>        
-                    <MoviesContainerCard key={item.id}>              
-                        <MoviesImage src={item.poster_src} />
-                        <MoviesCardInfo>
+                <MoviesContainerCard key={item.id}>              
+                    <MoviesImage src={item.poster_src} />
+                    <MoviesCardInfo>
                             <MoviesTitle onClick={onClickDetails}>{item.title}</MoviesTitle>
-                            <MoviesDate>{item.release_date}</MoviesDate>
+                            <MoviesDate>{formattedDate}</MoviesDate>
                             <MoviesDescription>{item.overview}</MoviesDescription>
-                        </MoviesCardInfo>                
-                    </MoviesContainerCard>                 
+                    </MoviesCardInfo>                
+                </MoviesContainerCard>                 
                 
           </>
     )

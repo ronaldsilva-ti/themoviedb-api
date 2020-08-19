@@ -10,7 +10,6 @@ export default function Modal({item, isOpen, onClickClose}){
     
 
     if (!isOpen) return null;
-    console.log(item.title)
 
     return ReactDOM.createPortal(
         

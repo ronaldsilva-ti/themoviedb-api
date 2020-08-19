@@ -26,7 +26,7 @@ export const SeriesActions = (serie) => {
 
             })  
         } catch (error) {
-            console.log(error)
+            alert(error)
         }
     }
 }

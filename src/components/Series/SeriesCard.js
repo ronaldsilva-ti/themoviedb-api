@@ -1,4 +1,6 @@
 import React from 'react';
+import { parseISO, format } from 'date-fns';
+
 import { 
     SeriesContainerCard,
     SeriesCardInfo,
@@ -8,8 +10,18 @@ import {
     SeriesDate
   } from './SeriesCardStyles';
   
-export default function SeriesCard({item, onClickDetails}){      
+export default function SeriesCard({item, onClickDetails}){  
+
+      // const date = item.release_date;
+      // const parsedDate = parseISO(date);  
   
+      // const formattedDate = format(
+      //     parsedDate, 
+      //     " dd'/'MM'/'yyyy "
+      //   );
+
+
+        
     return(       
           <>  
                 <SeriesContainerCard key={item.id}>

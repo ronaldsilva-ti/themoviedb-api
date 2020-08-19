@@ -17,11 +17,12 @@ export const MoviesActions = (movie) => {
             dispatch(getResultMovie(resultPeople))             
             const movies = (response.data.results)            
             movies.forEach(movie => {
-                movie.poster_src = URL_IMAGE + movie.poster_path
+                movie.poster_src = URL_IMAGE + movie.poster_path 
+                console.log(movie.release_date  )
                 dispatch(listingMovie(movie))
             })  
         } catch (error) {
-            console.log(error)
+            alert(error)
         }
     }
 }
